@@ -57,9 +57,8 @@ applied to `POINCARE_SMOOTH` and `MOI_SST_HEADLINE`.
 
 ## Building
 
-The development needs a built HOL Light; we recommend HOL Light commit `e5236a58` (2026-11-10), with which we
-tested it (OCaml 4.14.1); it also loads with the earlier commits `2828953e` and `924faf0c`. Start HOL Light in the
-root directory of this repository. HOL Light's load path is first the current directory and then the HOL Light
+The development needs a built HOL Light. The commits of HOL Light that check this proof are tracked at
+<https://hol-light.github.io/benchmark-results/>. Start HOL Light in the root directory of this repository. HOL Light's load path is first the current directory and then the HOL Light
 directory, so `src/...` is found here and `Multivariate/...` in HOL Light. Then:
 
 ```
@@ -79,7 +78,7 @@ instead of 120: a quarter less memory, half a percent more time), then loads HOL
 its own prerequisites with `needs`, so once those three library files are loaded, any file of `src/` can be
 loaded on its own.
 
-Measured (CPU time) with HOL Light `e5236a58` in a fresh session of the standard bytecode toplevel (one core),
+Measured (CPU time) in a fresh session of the standard bytecode toplevel (one core),
 peak memory about 17.5 GiB, on a shared machine with several such sessions running at the same time:
 
 | stage | time |
@@ -109,7 +108,7 @@ peak memory about 17.5 GiB, on a shared machine with several such sessions runni
 
 HOL Light's core, Multivariate and the whole development were recorded as [HOLTrace](https://holtrace.cr.yp.to/)
 proof traces, in 11 parts: 666,601,455 primitive inferences in 20.09 GB of traces (as written, not pruned), made
-with HOL Light commit `2828953e`, the parent of the recommended commit.
+with the HOL Light commit given in `doc/REPORT.md`.
 
 - HOLTrace's C checker, written independently of HOL Light, accepted every part.
 - The parts were then replayed through HOL Light's kernel, all in one fresh session (checkpointed once with DMTCP
