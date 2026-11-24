@@ -2414,9 +2414,9 @@ let MOI_S3CL_LOCALLY_POLY = prove
     USE_THEN "cc" (MP_TAC o CONJUNCT2 o CONJUNCT2 o SPEC `m:int`) THEN
     REWRITE_TAC[EXTENSION; IN_UNIONS] THEN DISCH_THEN(MP_TAC o SPEC `z:real^3`) THEN
     REWRITE_TAC[ASSUME `(z:real^3) IN moi_s3cl_ann hh bb m`] THEN
-    DISCH_THEN(X_CHOOSE_THEN `t:real^3->bool` STRIP_ASSUME_TAC) THEN
-    EXISTS_TAC `t:real^3->bool` THEN REWRITE_TAC[ASSUME `(z:real^3) IN t`] THEN
-    EXISTS_TAC `m:int` THEN REWRITE_TAC[ASSUME `(t:real^3->bool) IN cc (m:int)`] THEN
+    DISCH_THEN(X_CHOOSE_THEN `tt:real^3->bool` STRIP_ASSUME_TAC) THEN
+    EXISTS_TAC `tt:real^3->bool` THEN REWRITE_TAC[ASSUME `(z:real^3) IN tt`] THEN
+    EXISTS_TAC `m:int` THEN REWRITE_TAC[ASSUME `(tt:real^3->bool) IN cc (m:int)`] THEN
     UNDISCH_TAC `(z:real^3) IN moi_s3cl_ann hh bb m` THEN UNDISCH_TAC `(z:real^3) IN u` THEN
     SET_TAC[];
     REWRITE_TAC[IN_UNIONS; EXISTS_IN_IMAGE; IN_ELIM_THM] THEN
